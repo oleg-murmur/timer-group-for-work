@@ -13,6 +13,22 @@
 }
 .test_2 {
     position:relative;
+
+}
+@keyframes colorChange {
+    0% {
+        /* background-color: #3498db;  */
+    }
+    50% {
+        background-color: #e74d3cb1; /* Красный */
+    }
+    100% {
+        /* background-color: #3498db;  */
+    }
+}
+.timerEnd {
+    position:relative;
+    animation: colorChange 2s infinite;
 }
 .test{
     /* width: 100%;

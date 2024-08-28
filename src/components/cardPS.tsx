@@ -3,23 +3,40 @@ import { Flex, Switch, Card, Avatar, Row, Col } from 'antd'
 import Countdown, { CountdownProps } from 'antd/es/statistic/Countdown'
 import React, { useState } from 'react'
 import PSCard from './PSCard';
+import { addMinutesToCurrentTime } from '../helpers/addMinutesToTimer';
 
 const dataCard = [
   {
     title: 'PS 5_01',
     abonement: '2 часа',
+    client: {
+      info: "имя 1"
+    },
+    time: 100
   },
   {
     title: 'PS 5_02',
     abonement: '1 час',
+    client: {
+      info: "имя 1"
+    },
+    time: 2
   },
   {
     title: 'PS 5_03',
     abonement: '30 мин',
+    client: {
+      info: "имя 1"
+    },
+    time: 45
   },
   {
     title: 'PS 5_04',
     abonement: '1 час',
+    client: {
+      info: "имя 1"
+    },
+        time: 1
   },
 ]
 
@@ -41,7 +58,7 @@ const CardPS: React.FC = () => {
     <Flex align="start" wrap gap="middle">
     {/* <Switch checked={!loading} onChange={(checked) => setLoading(!checked)} /> */}
       {dataCard.map((data): any => (
-        <PSCard data={data}/>
+        <PSCard key={data.title} data={data}/>
       ))}
   </Flex>
   )
