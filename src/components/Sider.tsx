@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import {
   DashboardOutlined,
-  EditOutlined,
-  EllipsisOutlined,
   FieldTimeOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  SettingOutlined,
   TableOutlined,
-  UploadOutlined,
-  UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Card, Col, Flex, Layout, Menu, Row, Switch, theme } from 'antd';
-import Countdown, { CountdownProps } from 'antd/es/statistic/Countdown';
+import { Button, Layout, Menu, theme } from 'antd';
 import CardPS from './cardPS';
 const { Header, Sider, Content } = Layout;
 

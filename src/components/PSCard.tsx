@@ -1,8 +1,8 @@
-import { EditOutlined, SettingOutlined, EllipsisOutlined, DownOutlined, UserOutlined, FieldTimeOutlined } from '@ant-design/icons';
-import { Card, Row, Col, Button, Dropdown, Space, MenuProps } from 'antd'
+import { FieldTimeOutlined } from '@ant-design/icons';
+import { Card, Row, Button, Dropdown, Space, MenuProps, Select, InputNumber } from 'antd'
 import Countdown, { CountdownProps } from 'antd/es/statistic/Countdown'
 import dayjs from 'dayjs';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { addMinutesToCurrentTime } from '../helpers/addMinutesToTimer';
 
 const TIME_TO_ASSEMBLE = 15
@@ -42,6 +42,7 @@ const PSCard = ({data}: any) => {
 
     const [statusTimer, setStatusTimer] = useState<number>(0) // start / reset / need logic
     const [startTime, setStartTime] = useState<dayjs.Dayjs>(dayjs()) // not use now
+    const [playerCount, setPlayerCount] = useState<number>(1)
     const [abonement, setAbonement] = useState<{minutes: string, title: string
     }>() // время абонемента
 
@@ -62,7 +63,11 @@ const PSCard = ({data}: any) => {
       setTimeEnd(false)
       setStatusTimer(0)
     }
+    const onChange = (value: any) => {
+      console.log(`selected ${value}`);
+      setPlayerCount(value)
 
+    };
     const onFinish: CountdownProps['onFinish'] = () => {
         console.log('finished!');
         setStatusTimer(0)
@@ -88,7 +93,10 @@ const PSCard = ({data}: any) => {
           description={
             !timeEnd ?
             <>
-              <h3>Количество игроков: {data.client.count}</h3>
+            <Space wrap>
+            <h3>Количество игроков:</h3>
+            <InputNumber min={1} max={4} disabled={statusTimer ? true : false} onChange={onChange} defaultValue={1} variant="filled" style={{ width: 50 }} />
+            </Space>
               <h3 style={{}}>Оплаченное время: {abonement?.title ?? 'Не выставлено'}.</h3>
               <Space wrap>
               <Dropdown.Button menu={menuProps} placement="bottom" icon={<FieldTimeOutlined />}>Изменить</Dropdown.Button>
