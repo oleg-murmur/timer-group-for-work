@@ -10,7 +10,8 @@ const dataCard = [
     title: 'PS 5_01',
     abonement: '2 часа',
     client: {
-      info: "имя 1"
+      info: "имя 1",
+      count: 1
     },
     time: 100
   },
@@ -18,7 +19,8 @@ const dataCard = [
     title: 'PS 5_02',
     abonement: '1 час',
     client: {
-      info: "имя 1"
+      info: "имя 1",
+      count: 2
     },
     time: 2
   },
@@ -26,7 +28,8 @@ const dataCard = [
     title: 'PS 5_03',
     abonement: '30 мин',
     client: {
-      info: "имя 1"
+      info: "имя 1",
+      count: 3
     },
     time: 45
   },
@@ -34,7 +37,8 @@ const dataCard = [
     title: 'PS 5_04',
     abonement: '1 час',
     client: {
-      info: "имя 1"
+      info: "имя 1",
+      count: 4
     },
         time: 1
   },
