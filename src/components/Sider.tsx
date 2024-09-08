@@ -61,7 +61,7 @@ const SiderMenu: React.FC = () => {
               height: 64,
             }}
           />
-          что что еще
+          
         </Header>
         <Content
           style={{
